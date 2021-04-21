@@ -1,13 +1,13 @@
-from xlrd import open_workbook_xls
+from openpyxl import load_workbook
 
 class XlsReader():
     def __init__(self):
         self.__file = None
 
-    def readXls(self, path):
+    def readXlsx(self, path):
         try:
-            self.__file = open_workbook_xls(path)
+            self.__file = load_workbook(path)
         except:
-            print('檔案開啟失敗！請確認檔案是否存在。')
+            print:('xlsx檔開啟失敗！請確認檔案是否存在。')
             return None
         return self.__file
