@@ -12,10 +12,14 @@ class FormatConverter():
         result = Workbook()
         ws = result.active
         sheets = workbook.sheets()
-        self.__copyTitleOfData(sheets[0], ws)
-        self.__copyDataInEach(sheets, ws)
-        self.__insertTitleOfSheet(ws)
+        #self.__copyTitleOfData(sheets[0], ws)
+        #self.__copyDataInEach(sheets, ws)
+        #self.__insertTitleOfSheet(ws)
+        self.__addTimeStampToLastColumn(sheets[0])
         return result
+
+    def __addTimeStampToLastColumn(self, table):
+        print(table.col_values(0))
 
     def __copyTitleOfData(self, table, workSheet):
         for i in range(1, 9):
